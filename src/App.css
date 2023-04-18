@@ -1,0 +1,140 @@
+*, ::before, ::after {
+  --purple:#CDB4DB;
+  --light-pink:#FFC8DD;
+  --dark-pink:#FFAFCC;
+  --light-blue:#BDE0FE;
+  --dark-blue:#A2D2FF;
+}
+
+.body {
+}
+
+#root {
+  font-family: 'Dongle', sans-serif;
+  font-family: 'Nanum Pen Script', cursive;
+  font-family: 'Delicious Handrawn', cursive;
+  font-size:16px;
+}
+
+.appContainer {
+  /* outline:2px solid red; */
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+}
+
+/* header section */
+.headerContainer {
+  /* outline:2px solid red; */
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-content:center;
+  position:relative;
+  height:10vh;
+  background-color:var(--dark-blue);
+  border-bottom:2px solid black;
+}
+
+.headerContainer h1 {
+  /* outline:2px solid green; */
+  text-align:center;
+  font-size:4em;
+}
+
+/* main section */
+
+
+
+.cardsContainer {
+  background-color:var(--light-pink);
+  padding: 1em 0em 1em 0em;
+  /* outline:2px solid black; */
+}
+
+/* .rowContainer {
+  outline:2px solid black;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+} */
+
+.cardContainer {
+  margin: 1em 0em 1em 0em;
+  outline:2px solid black;
+
+}
+
+.cardImage {
+  /* outline:2px solid red; */
+}
+
+.heartContainer {
+  /* outline:2px solid blue; */
+  height:1.5em;
+  width:80%;
+  margin-left:10%;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:space-evenly;
+}
+
+.heartCountContainer {
+  position:relative;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  align-self:center;
+}
+
+.heartCount {
+  position:relative;
+  top:0.4em;
+}
+
+.heartIcons {
+  font-size:1em;
+  align-self:center;
+  /* outline:2px solid brown; */
+  line-height:1.5em;
+  margin-left:0.3em;
+}
+
+.cardBody {
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:space-evenly;
+}
+.cardTitle {
+  font-size:1.5em;
+}
+.cardText {
+  font-size:1em;
+}
+
+
+
+
+/* footer section */
+.footerContainer {
+  /* outline:2px solid red; */
+  position:relative;
+  height:10vh;
+  display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-content:center;
+  background-color:var(--dark-blue);
+  border-top:2px solid black;
+}
+
+.footerCreator {
+  /* outline:2px solid green; */
+  text-align:center;
+}
+
