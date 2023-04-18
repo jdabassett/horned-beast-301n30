@@ -21,7 +21,7 @@ class Main extends React.Component {
     //iterate over data to make horned beast elements
     const HornedBeasts = this.state.beastArray.map(
       (item,index)=>{
-        return <Col sm={12} md={6} lg={4} xl={3} xxl={2}  >
+        return <Col sm={9} md={5} lg={4} xl={3} xxl={2}  >
           <HornedBeast 
           key={item._id}
           title={item.title} 
@@ -33,13 +33,13 @@ class Main extends React.Component {
           })
 
     return (
-      <>
-        <Container className='mainContainer'>
+      <div className='cardsContainer'>
+        <Container className='rowContainer'>
           <Row sm={1} md={2} lg={3} xl={4} xxl={6}>
             {HornedBeasts}
           </Row>
         </Container>
-      </>
+      </div>
     )
   }
 }

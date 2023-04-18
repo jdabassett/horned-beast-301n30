@@ -1,5 +1,12 @@
 *, ::before, ::after {
-  
+  --purple:#CDB4DB;
+  --light-pink:#FFC8DD;
+  --dark-pink:#FFAFCC;
+  --light-blue:#BDE0FE;
+  --dark-blue:#A2D2FF;
+}
+
+.body {
 }
 
 #root {
@@ -10,7 +17,7 @@
 }
 
 .appContainer {
-  outline:2px solid red;
+  /* outline:2px solid red; */
   display:flex;
   flex-direction:column;
   flex-wrap:nowrap;
@@ -18,7 +25,7 @@
 
 /* header section */
 .headerContainer {
-  outline:2px solid red;
+  /* outline:2px solid red; */
   display:flex;
   flex-direction:column;
   flex-wrap:nowrap;
@@ -26,37 +33,42 @@
   align-content:center;
   position:relative;
   height:10vh;
+  background-color:var(--dark-blue);
+  border-bottom:2px solid black;
 }
 
 .headerContainer h1 {
-  outline:2px solid green;
+  /* outline:2px solid green; */
   text-align:center;
   font-size:4em;
 }
 
 /* main section */
-.mainContainer {
-  /* outline:2px solid red; */
-  display: flex;
-  flex-direction:row;
-  flex-wrap:nowrap;
-  justify-content:space-evenly;
-  align-content: center;
+
+
+
+.cardsContainer {
+  background-color:var(--light-pink);
+  padding: 1em 0em 1em 0em;
+  /* outline:2px solid black; */
 }
 
-
+/* .rowContainer {
+  outline:2px solid black;
+  display:flex;
+  flex-direction:row;
+  flex-wrap:wrap;
+  justify-content:space-between;
+} */
 
 .cardContainer {
-  min-width:15em;
-  min-height:20em;
-  position:relative;
+  margin: 1em 0em 1em 0em;
+  outline:2px solid black;
+
 }
 
 .cardImage {
-  object-fit:cover;
-  min-width:15em;
-  min-height:12em !important;
-  outline:2px solid red;
+  /* outline:2px solid red; */
 }
 
 .heartContainer {
@@ -92,8 +104,6 @@
 }
 
 .cardBody {
-  position:absolute;
-  top:13em;
   display:flex;
   flex-direction:column;
   flex-wrap:nowrap;
@@ -111,7 +121,7 @@
 
 /* footer section */
 .footerContainer {
-  outline:2px solid red;
+  /* outline:2px solid red; */
   position:relative;
   height:10vh;
   display:flex;
@@ -119,10 +129,12 @@
   flex-wrap:nowrap;
   justify-content:center;
   align-content:center;
+  background-color:var(--dark-blue);
+  border-top:2px solid black;
 }
 
 .footerCreator {
-  outline:2px solid green;
+  /* outline:2px solid green; */
   text-align:center;
 }
 
