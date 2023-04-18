@@ -34,7 +34,7 @@ class Main extends React.Component {
 
     return (
       <>
-        <Container>
+        <Container className='mainContainer'>
           <Row sm={1} md={2} lg={3} xl={4} xxl={6}>
             {HornedBeasts}
           </Row>
