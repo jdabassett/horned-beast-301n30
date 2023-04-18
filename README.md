@@ -25,22 +25,28 @@ Feature#2: Allow Users to Favorite Individual Beasts
   *Actual Time: 01:20
 
 Feature#3: Bootstrap
-  *Estimated Time:
+  *Estimated Time: 03:00
+  *Start Time: 09:00
+  *Finish Time: 14:00
+  *Actual Time: 05:00
+
+Feature#4: Add Interaction (State Based)
+  *Estimated Time: 00:30
+  *Start Time: 14:00
+  *Finish Time: 15:00
+  *Actual Time: 01:00
+
+Feature#5: Display a Modal 
+  *Estimated Time: 02:00
   *Start Time:
   *Finish Time:
   *Actual Time:
 
-Feature#4: Add Interaction
-  *Estimated Time:
+Feature#6: Fuzzy Search
+  *Estimated Time: 00:00
   *Start Time:
   *Finish Time:
   *Actual Time:
 
 
 
-
-Feature#: 
-  *Estimated Time:
-  *Start Time:
-  *Finish Time:
-  *Actual Time:

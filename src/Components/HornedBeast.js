@@ -30,7 +30,11 @@ class HornedBeast extends React.Component {
         onMouseEnter={()=>this.handlerHover(true)}
         onMouseLeave={()=>this.handlerHover(false)}
         >
-        <Card.Img className="cardImage" variant="top" src={this.props.imageUrl} />
+        <Card.Img 
+          className="cardImage" variant="top" 
+          src={this.props.imageUrl} 
+          onClick={this.props.handlerModal}
+          />
 
         <div className="heartContainer">
           {/* plus heart icon will only appear when hearts equal zero*/}
@@ -52,7 +56,6 @@ class HornedBeast extends React.Component {
 
         <Card.Body className="cardBody">
           <Card.Title className="cardTitle">{this.props.title}</Card.Title>
-          <Card.Text className="cardText">{this.props.description}</Card.Text>
         </Card.Body>
       </Card>
     )
