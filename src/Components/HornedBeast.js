@@ -1,5 +1,7 @@
 import React from 'react';
 import {TbHeartFilled, TbHeartPlus, TbHeartMinus} from 'react-icons/tb';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 
 
 class HornedBeast extends React.Component {
@@ -25,18 +27,11 @@ class HornedBeast extends React.Component {
     // console.log(this.props)
     // console.log(this.state.hoverState)
     return (
-      <div 
+      <Card style={{width:'18rem'}}
         onMouseEnter={()=>this.handlerHover(true)}
         onMouseLeave={()=>this.handlerHover(false)}
         >
-        <h2>{this.props.title}</h2>
-        <img 
-          width='300px' 
-          src={this.props.imageUrl} 
-          alt={this.props.description} 
-          title={this.props.title} 
-          onClick={()=>this.handlerHearts(1)}
-          />
+        <Card.Img variant="top" src={this.props.imageUrl} />
         
         {/* plus heart icon will only appear when hearts equal zero*/}
         {this.state.hearts===0?
@@ -51,12 +46,11 @@ class HornedBeast extends React.Component {
           <TbHeartMinus onClick={()=>this.handlerHearts(-1)}/>:
           null}
 
-
-        
-
-
-        <p>{this.props.description}</p>
-      </div>
+        <Card.Body>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>{this.props.description}</Card.Text>
+        </Card.Body>
+      </Card>
     )
   }
 }
