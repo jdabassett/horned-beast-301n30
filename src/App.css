@@ -3,7 +3,7 @@
   --light-pink:#FFC8DD;
   --dark-pink:#FFAFCC;
   --light-blue:#BDE0FE;
-  --dark-blue:#A2D2FF;
+  --dark-blue:#10CAF0;
 }
 
 .body {
@@ -50,6 +50,11 @@
 .cardsContainer {
   background-color:var(--light-pink);
   padding: 1em 0em 1em 0em;
+  /* display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-content:center; */
   /* outline:2px solid black; */
 }
 
@@ -60,6 +65,19 @@
   flex-wrap:wrap;
   justify-content:space-between;
 } */
+
+/* dropdown form */
+.dropdownContainer {
+  /* outline:2px solid red; */
+  display:flex;
+  flex-direction:row;
+  flex-wrap:nowrap;
+  justify-content:center;
+}
+
+.dropdownMenu {
+  outline:2px solid black;
+}
 
 .cardContainer {
   margin: 1em 0em 1em 0em;

@@ -9,7 +9,7 @@ class SelectedBeast extends React.Component {
   }
 
   render () {
-    console.log(this.props.selectedBeastObject)
+    // console.log(this.props.selectedBeastObject)
 
     // let {selectedBeastObject,handlerModal,...rest}= this.props;
 
@@ -32,11 +32,13 @@ class SelectedBeast extends React.Component {
 
             <p>{this.props.selectedBeastObject.description}</p>
 
+            <p>{`Horns: ${this.props.selectedBeastObject.horns}`}</p>
+
             <img width='200px' src={this.props.selectedBeastObject.image_url} alt={this.props.selectedBeastObject.description}/>
             
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={()=> this.props.handlerModal(false,null)}>Close</Button>
+            <Button variant="info" onClick={()=> this.props.handlerModal(false,null)}>Close</Button>
           </Modal.Footer>
       </Modal>
     )
