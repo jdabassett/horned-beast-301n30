@@ -11,30 +11,32 @@ class App extends React.Component {
     super(props)
     this.state={
       beastsArray:data,
-      modalState:true,
-      selectedBeastIndex:1
+      modalState:false,
+      selectedBeastIndex:4,
+      selectedBeastObject:{}
     }
   }
 
   handlerModal = (bool,index) => {
     this.setState(prevState=> ({...prevState,
                                 modalState:bool,
-                                selectedBeast:index}))
-
+                                selectedBeastIndex:index,
+                                selectedBeastObject:prevState.beastsArray.filter(item=> item._id===index)[0]}))
+      // console.log(bool,index)
   }
 
   
   render() {
-    // console.log(SelectedBeast)
+    // console.log(this.state.selectedBeastIndex)
+
     return (
     <div className='appContainer'>
 
           <Header/>
-          <SelectedBeast 
-            selectedBeastIndex={this.state.selectedBeastIndex}
-            data={this.state.beastsArray}
+          {this.state.modalState?<SelectedBeast 
+            selectedBeastObject={this.state.selectedBeastObject}
             show={this.state.modalState}
-            handlerModal={this.handlerModal}/>
+            handlerModal={this.handlerModal}/>:null}
           <Main 
             data={this.state.beastsArray}
             handlerModal={this.handlerModal}/>

@@ -9,11 +9,16 @@ class SelectedBeast extends React.Component {
   }
 
   render () {
-    let selectedBeastObject = this.props.data.filter(item => item._id===this.props.selectedBeastIndex)
+    console.log(this.props.selectedBeastObject)
+
+    // let {selectedBeastObject,handlerModal,...rest}= this.props;
 
     return (
       <Modal
-          {...this.props}
+          show={this.props.show}
+          // show={this.props.show}
+          // selectedBeastObject={this.props.selectedBeastObject}
+          // handlerModal={this.props.handlerModal}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
@@ -22,13 +27,16 @@ class SelectedBeast extends React.Component {
           </Modal.Header> */}
           <Modal.Body>
             <Modal.Title id="contained-modal-title-vcenter">
-              {selectedBeastObject[0].title}
+              {this.props.selectedBeastObject.title}
             </Modal.Title>
-            <p>{selectedBeastObject[0].description}</p>
-            <img width='200px' src={selectedBeastObject[0].image_url} alt={selectedBeastObject[0].description}/>
+
+            <p>{this.props.selectedBeastObject.description}</p>
+
+            <img width='200px' src={this.props.selectedBeastObject.image_url} alt={this.props.selectedBeastObject.description}/>
+            
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={()=>this.props.handlerModal(false,null)}>Close</Button>
+            <Button onClick={()=> this.props.handlerModal(false,null)}>Close</Button>
           </Modal.Footer>
       </Modal>
     )
