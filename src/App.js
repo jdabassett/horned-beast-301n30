@@ -33,10 +33,10 @@ class App extends React.Component {
     <div className='appContainer'>
 
           <Header/>
-          {this.state.modalState?<SelectedBeast 
-            selectedBeastObject={this.state.selectedBeastObject}
+          <SelectedBeast 
+            selectedBeastObject={this.state.modalState?this.state.selectedBeastObject:{}}
             show={this.state.modalState}
-            handlerModal={this.handlerModal}/>:null}
+            handlerModal={this.handlerModal}/>
           <Main 
             data={this.state.beastsArray}
             handlerModal={this.handlerModal}/>
