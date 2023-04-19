@@ -7,6 +7,7 @@
 }
 
 .body {
+  background-color:var(--light-pink);
 }
 
 #root {
@@ -14,6 +15,7 @@
   font-family: 'Nanum Pen Script', cursive;
   font-family: 'Delicious Handrawn', cursive;
   font-size:16px;
+
 }
 
 .appContainer {
@@ -67,17 +69,15 @@
 } */
 
 /* dropdown form */
-.dropdownContainer {
+.formContainer {
   /* outline:2px solid red; */
-  display:flex;
-  flex-direction:row;
-  flex-wrap:nowrap;
-  justify-content:center;
+  width:275px;
+  min-width:275px;
+  margin: 0 auto 0 auto;
 }
 
-.dropdownMenu {
-  outline:2px solid black;
-}
+
+
 
 .cardContainer {
   margin: 1em 0em 1em 0em;
@@ -150,6 +150,7 @@
   align-content:center;
   background-color:var(--dark-blue);
   border-top:2px solid black;
+  border-bottom:2px solid black;
 }
 
 .footerCreator {

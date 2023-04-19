@@ -38,15 +38,15 @@ Feature#4: Add Interaction (State Based)
 
 Feature#5: Display a Modal 
   *Estimated Time: 02:00
-  *Start Time:
-  *Finish Time:
-  *Actual Time:
+  *Start Time: 10:00
+  *Finish Time: 14:00
+  *Actual Time: 04:00
 
 Feature#6: Fuzzy Search
   *Estimated Time: 00:00
-  *Start Time:
-  *Finish Time:
-  *Actual Time:
+  *Start Time: 15:00
+  *Finish Time: 22:00
+  *Actual Time: 07:00
 
 
 

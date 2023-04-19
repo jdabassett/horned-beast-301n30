@@ -15,7 +15,7 @@ class App extends React.Component {
       selectedBeastIndex:4,
       selectedBeastObject:{},
       uniqueHornsArray:[],
-      filteredBeastsByHorns:'All',
+      filteredBeastsByHorns:[],
       filteredBeastsArray:[],
     }
   }
@@ -23,8 +23,12 @@ class App extends React.Component {
   // generate array of unique number of horns
   componentDidMount() {
     let fullHornsArray = data.map(item => item.horns)
-    let uniqueHornsArray = ["All",... new Set(fullHornsArray)]
-    this.setState({beastsArray:data,uniqueHornsArray:uniqueHornsArray,filteredBeastsArray:data})
+    let uniqueHornsArray = [... new Set(fullHornsArray)]
+    this.setState({
+      beastsArray:data,
+      uniqueHornsArray:uniqueHornsArray,
+      filteredBeastsByHorns:uniqueHornsArray,
+      filteredBeastsArray:data})
   }
 
   // select horned beast to display with modal
@@ -40,35 +44,27 @@ class App extends React.Component {
         selectedBeastIndex:null,
         selectedBeastObject:{}}))
     };
-      // console.log(bool,index)
   }
 
+  //update array of horns to filter displayed horns
   handlerFilteredBeasts = (event) => {
-      console.log(event)
-      this.setState({filteredBeastsByHorns:event})
+      let newArray = event.target.value.split(",").map(item => parseInt(item))
+      this.setState({filteredBeastsByHorns:newArray})
   }
 
   //update filtered beasts array when filtered beasts by horn changes
   componentDidUpdate(prevProps, prevState){
     if (prevState.filteredBeastsByHorns !== this.state.filteredBeastsByHorns) {
-      let filteredBeastsArray = (
-        this.state.filteredBeastsByHorns === 'All'?
-        this.state.beastsArray:
-        this.state.beastsArray.filter(item => item.horns===this.state.filteredBeastsByHorns))
+      let filteredBeastsArray =  this.state.beastsArray.filter(item => this.state.filteredBeastsByHorns.includes(item.horns))
       this.setState({filteredBeastsArray:filteredBeastsArray})
-      // console.log(filteredBeastsArray);
     };
 
   }
 
   
   render() {
-    // console.log(this.state.selectedBeastIndex)
-    // console.log(this.state.uniqueHornsArray)
-    console.log(this.state.filteredBeastsByHorns)
     return (
     <div className='appContainer'>
-
           <Header/>
           <SelectedBeast 
             selectedBeastObject={this.state.selectedBeastObject}

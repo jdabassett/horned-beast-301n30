@@ -23,8 +23,6 @@ class HornedBeast extends React.Component {
   }
 
   render() {
-    // console.log(this.props)
-    // console.log(this.state.hoverState)
     return (
       <Card className="cardContainer"
         onMouseEnter={()=>this.handlerHover(true)}

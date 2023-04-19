@@ -9,22 +9,13 @@ class SelectedBeast extends React.Component {
   }
 
   render () {
-    // console.log(this.props.selectedBeastObject)
-
-    // let {selectedBeastObject,handlerModal,...rest}= this.props;
-
     return (
       <Modal
           show={this.props.show}
-          // show={this.props.show}
-          // selectedBeastObject={this.props.selectedBeastObject}
-          // handlerModal={this.props.handlerModal}
           size="lg"
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
-          {/* <Modal.Header>
-          </Modal.Header> */}
           <Modal.Body>
             <Modal.Title id="contained-modal-title-vcenter">
               {this.props.selectedBeastObject.title}
