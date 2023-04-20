@@ -23,7 +23,7 @@ class App extends React.Component {
   // generate array of unique number of horns
   componentDidMount() {
     let hornsArray = data.map(item=> parseInt(item.horns));
-    let uniqueHornsArray = [... new Set(hornsArray)]
+    let uniqueHornsArray = [...new Set(hornsArray)]
     this.setState({
       beastsArray:data,
       uniqueHornsArray: uniqueHornsArray,
