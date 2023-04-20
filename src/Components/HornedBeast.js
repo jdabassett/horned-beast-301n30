@@ -28,6 +28,7 @@ class HornedBeast extends React.Component {
         onMouseEnter={()=>this.handlerHover(true)}
         onMouseLeave={()=>this.handlerHover(false)}
         >
+          
         <Card.Img 
           className="cardImage" variant="top" 
           src={this.props.imageUrl} 
