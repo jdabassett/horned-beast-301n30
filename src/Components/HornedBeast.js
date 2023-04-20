@@ -41,6 +41,7 @@ class HornedBeast extends React.Component {
             <TbHeartPlus className="heartIcons" onClick={()=>this.handlerHearts(1)}/>:
             null}
             
+            
           {/* solid heart icon will only appear when hearts greater than zero*/}
           {this.state.hearts>0?
             <div className='heartCountContainer'>
