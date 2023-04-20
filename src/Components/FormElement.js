@@ -27,7 +27,7 @@ class FormElement extends React.Component {
               >
               <option 
                 value={this.props.uniqueHornsArray}
-                >search by number of horns!</option>
+                >search beasts by number of horns!</option>
               <option 
                 value={this.props.uniqueHornsArray}
                 >All</option>
