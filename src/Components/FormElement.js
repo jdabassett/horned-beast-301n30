@@ -10,7 +10,7 @@ class FormElement extends React.Component {
   }
 
   render() {
-    let uniqueHorns = this.props.filteredBeastsByHorns.map(item=> {
+    let uniqueHorns = this.props.uniqueHornsArray.map(item=> {
       return <option key={item} value={item}>{item}</option>
     })
 
@@ -20,14 +20,24 @@ class FormElement extends React.Component {
             className="mb-3 formContainer"
             >
             
-            <Form.Select aria-label="Default select example">
-              <option>search by number of horns!</option>
-              <option value={this.props.filteredBeastsByHorns}>All</option>
+            <Form.Select 
+              aria-label="Default select example"
+              class-name="dropDown" 
+              onChange={(e)=>this.props.handlerFilteredBeasts(e)}
+              >
+              <option 
+                value={this.props.uniqueHornsArray}
+                >search by number of horns!</option>
+              <option 
+                value={this.props.uniqueHornsArray}
+                >All</option>
               {uniqueHorns}
             </Form.Select>
             
             <Form.Control 
+              className="searchField"
               type="text" 
+              class-name="searchField" 
               placeholder="search beasts by title!" 
               onChange={(e)=>this.props.handlerFilteredBeasts(e)}
               />
