@@ -11,27 +11,18 @@ class FormElement extends React.Component {
 
   render() {
 
-
-    //generate array of unique horn components for dropdown menu
-    const UniqueHornsDropdown = this.props.uniqueHornsArray.map((item,index) => {
-      return <option
-                key={index}
-                value={`${item}`}
-                >{item}</option>
-    })
-
     return (
         <>
           <Form.Group 
-            className="mb-3 formContainer">
-            <Form.Label>How many horns do you want your beasts to have?</Form.Label>
-            <Form.Select onChange={(e)=>this.props.handlerFilteredBeasts(e)}>
-              <option
-                key='All'
-                value={this.props.uniqueHornsArray}
-                >{`All the horns!`}</option>
-              {UniqueHornsDropdown}
-            </Form.Select>
+            className="mb-3 formContainer"
+            >
+            
+            <Form.Control 
+              type="text" 
+              placeholder="search beasts by title" 
+              onChange={(e)=>this.props.handlerFilteredBeasts(e)}
+              />
+
           </Form.Group>
         </>
       

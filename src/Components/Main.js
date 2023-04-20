@@ -36,7 +36,6 @@ class Main extends React.Component {
         {/* search and limit horns */}
         <FormElement
           handlerFilteredBeasts={this.props.handlerFilteredBeasts}
-          uniqueHornsArray={this.props.uniqueHornsArray}
           />
 
         {/* display all filtered beasts */}

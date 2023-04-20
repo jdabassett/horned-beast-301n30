@@ -12,22 +12,16 @@ class App extends React.Component {
     this.state={
       beastsArray:[],
       modalState:false,
-      selectedBeastIndex:4,
       selectedBeastObject:{},
-      uniqueHornsArray:[],
-      filteredBeastsByHorns:[],
+      filteredBeastsByTitle:'',
       filteredBeastsArray:[],
     }
   }
 
   // generate array of unique number of horns
   componentDidMount() {
-    let fullHornsArray = data.map(item => item.horns)
-    let uniqueHornsArray = [... new Set(fullHornsArray)]
     this.setState({
       beastsArray:data,
-      uniqueHornsArray:uniqueHornsArray,
-      filteredBeastsByHorns:uniqueHornsArray,
       filteredBeastsArray:data})
   }
 
@@ -36,26 +30,23 @@ class App extends React.Component {
     if (index){
       this.setState(prevState=> ({...prevState,
         modalState:bool,
-        selectedBeastIndex:index,
         selectedBeastObject:prevState.beastsArray.filter(item=> item._id===index)[0]})) 
     } else {
       this.setState(prevState=> ({...prevState,
         modalState:bool,
-        selectedBeastIndex:null,
         selectedBeastObject:{}}))
     };
   }
 
   //update array of horns to filter displayed horns
   handlerFilteredBeasts = (event) => {
-      let newArray = event.target.value.split(",").map(item => parseInt(item))
-      this.setState({filteredBeastsByHorns:newArray})
+      this.setState({filteredBeastsByTitle:event.target.value})
   }
 
   //update filtered beasts array when filtered beasts by horn changes
   componentDidUpdate(prevProps, prevState){
-    if (prevState.filteredBeastsByHorns !== this.state.filteredBeastsByHorns) {
-      let filteredBeastsArray =  this.state.beastsArray.filter(item => this.state.filteredBeastsByHorns.includes(item.horns))
+    if (prevState.filteredBeastsByTitle !== this.state.filteredBeastsByTitle) {
+      let filteredBeastsArray =  this.state.beastsArray.filter(item => item.title.toLowerCase().includes(this.state.filteredBeastsByTitle.toLowerCase()) )
       this.setState({filteredBeastsArray:filteredBeastsArray})
     };
 
@@ -71,7 +62,6 @@ class App extends React.Component {
             show={this.state.modalState}
             handlerModal={this.handlerModal}/>
           <Main 
-            uniqueHornsArray={this.state.uniqueHornsArray}
             handlerFilteredBeasts={this.handlerFilteredBeasts}
             data={this.state.filteredBeastsArray}
             handlerModal={this.handlerModal}/>
