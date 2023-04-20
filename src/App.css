@@ -3,10 +3,11 @@
   --light-pink:#FFC8DD;
   --dark-pink:#FFAFCC;
   --light-blue:#BDE0FE;
-  --dark-blue:#A2D2FF;
+  --dark-blue:#10CAF0;
 }
 
 .body {
+  background-color:var(--light-pink);
 }
 
 #root {
@@ -14,6 +15,7 @@
   font-family: 'Nanum Pen Script', cursive;
   font-family: 'Delicious Handrawn', cursive;
   font-size:16px;
+
 }
 
 .appContainer {
@@ -26,6 +28,8 @@
 /* header section */
 .headerContainer {
   /* outline:2px solid red; */
+  width:100vw;
+  height:10vh;
   display:flex;
   flex-direction:column;
   flex-wrap:nowrap;
@@ -40,7 +44,7 @@
 .headerContainer h1 {
   /* outline:2px solid green; */
   text-align:center;
-  font-size:4em;
+  font-size:3em;
 }
 
 /* main section */
@@ -50,6 +54,11 @@
 .cardsContainer {
   background-color:var(--light-pink);
   padding: 1em 0em 1em 0em;
+  /* display:flex;
+  flex-direction:column;
+  flex-wrap:nowrap;
+  justify-content:center;
+  align-content:center; */
   /* outline:2px solid black; */
 }
 
@@ -60,6 +69,17 @@
   flex-wrap:wrap;
   justify-content:space-between;
 } */
+
+/* dropdown form */
+.formContainer {
+  /* outline:2px solid red; */
+  width:275px;
+  min-width:275px;
+  margin: 0 auto 0 auto;
+}
+
+
+
 
 .cardContainer {
   margin: 1em 0em 1em 0em;
@@ -83,7 +103,6 @@
 }
 
 .heartCountContainer {
-  position:relative;
   display:flex;
   flex-direction:row;
   flex-wrap:nowrap;
@@ -111,9 +130,16 @@
 }
 .cardTitle {
   font-size:1.5em;
+  text-align:center;
 }
 .cardText {
   font-size:1em;
+}
+
+.searchError {
+  /* outline:2px solid red; */
+  margin:0 auto 0 auto;
+  text-align:center;
 }
 
 
@@ -122,7 +148,7 @@
 /* footer section */
 .footerContainer {
   /* outline:2px solid red; */
-  position:relative;
+  width:100vw;
   height:10vh;
   display:flex;
   flex-direction:column;
@@ -131,6 +157,7 @@
   align-content:center;
   background-color:var(--dark-blue);
   border-top:2px solid black;
+  border-bottom:2px solid black;
 }
 
 .footerCreator {
@@ -138,3 +165,10 @@
   text-align:center;
 }
 
+@media screen and (max-width:550px) {
+  .headerContainer h1 {
+    /* outline:2px solid green; */
+    font-size:2.5em;
+  }
+
+}
