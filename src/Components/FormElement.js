@@ -10,6 +10,9 @@ class FormElement extends React.Component {
   }
 
   render() {
+    let uniqueHorns = this.props.filteredBeastsByHorns.map(item=> {
+      return <option key={item} value={item}>{item}</option>
+    })
 
     return (
         <>
@@ -17,9 +20,15 @@ class FormElement extends React.Component {
             className="mb-3 formContainer"
             >
             
+            <Form.Select aria-label="Default select example">
+              <option>search by number of horns!</option>
+              <option value={this.props.filteredBeastsByHorns}>All</option>
+              {uniqueHorns}
+            </Form.Select>
+            
             <Form.Control 
               type="text" 
-              placeholder="search beasts by title" 
+              placeholder="search beasts by title!" 
               onChange={(e)=>this.props.handlerFilteredBeasts(e)}
               />
 

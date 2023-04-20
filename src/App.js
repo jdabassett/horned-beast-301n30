@@ -14,14 +14,18 @@ class App extends React.Component {
       modalState:false,
       selectedBeastObject:{},
       filteredBeastsByTitle:'',
+      filteredBeastsByHorns:[],
       filteredBeastsArray:[],
     }
   }
 
   // generate array of unique number of horns
   componentDidMount() {
+    let hornsArray = data.map(item=> parseInt(item.horns));
+    let uniqueHornsArray = [... new Set(hornsArray)]
     this.setState({
       beastsArray:data,
+      filteredBeastsByHorns: uniqueHornsArray,
       filteredBeastsArray:data})
   }
 
@@ -46,14 +50,19 @@ class App extends React.Component {
   //update filtered beasts array when filtered beasts by horn changes
   componentDidUpdate(prevProps, prevState){
     if (prevState.filteredBeastsByTitle !== this.state.filteredBeastsByTitle) {
-      let filteredBeastsArray =  this.state.beastsArray.filter(item => item.title.toLowerCase().includes(this.state.filteredBeastsByTitle.toLowerCase()) )
-      this.setState({filteredBeastsArray:filteredBeastsArray})
+      let filteredBeastsArray =  this.state.beastsArray.filter(item => item.title.toLowerCase().includes(this.state.filteredBeastsByTitle.toLowerCase()) );
+      this.setState({filteredBeastsArray:filteredBeastsArray});
     };
-
+    
+    if (prevState.filteredBeastsByHorns !== this.state.filteredBeastsByHorns){
+      let filteredBeastsArray = this.state.beastsArray.filter(item => this.state.filteredBeastsByHorns.includes(item.horns));
+      this.setState({filteredBeastsArray:filteredBeastsArray});
+    }
   }
 
   
   render() {
+
     return (
     <div className='appContainer'>
           <Header/>
@@ -62,6 +71,7 @@ class App extends React.Component {
             show={this.state.modalState}
             handlerModal={this.handlerModal}/>
           <Main 
+            filteredBeastsByHorns={this.state.filteredBeastsByHorns}
             handlerFilteredBeasts={this.handlerFilteredBeasts}
             data={this.state.filteredBeastsArray}
             handlerModal={this.handlerModal}/>
