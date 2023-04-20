@@ -18,7 +18,7 @@ class Header extends React.Component {
         onMouseLeave={()=>this.handlerHover(false)}>
 
         {this.state.hoverState?
-          <h1 style={{fontSize:'2em'}}>Hover Secret: Meaning of life 42.</h1>:
+          <h1 style={{fontSize:'1em'}}>Hover Secret: The answer to life, the universe, and everything is 42.</h1>:
           <h1>Horned Beast Gallery</h1>}
       </div>
     )

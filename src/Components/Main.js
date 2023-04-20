@@ -41,7 +41,9 @@ class Main extends React.Component {
         {/* display all filtered beasts */}
         <Container className='rowContainer'>
           <Row sm={1} md={2} lg={3} xl={4} xxl={6}>
-            {HornedBeasts}
+            {HornedBeasts.length===0?
+              <h1 className="searchError">Try a different search!!!</h1>:
+              HornedBeasts}
           </Row>
         </Container>
       </div>
