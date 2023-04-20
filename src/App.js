@@ -14,14 +14,20 @@ class App extends React.Component {
       modalState:false,
       selectedBeastObject:{},
       filteredBeastsByTitle:'',
+      uniqueHornsArray:[],
+      filteredBeastsByHorns:[],
       filteredBeastsArray:[],
     }
   }
 
   // generate array of unique number of horns
   componentDidMount() {
+    let hornsArray = data.map(item=> parseInt(item.horns));
+    let uniqueHornsArray = [... new Set(hornsArray)]
     this.setState({
       beastsArray:data,
+      uniqueHornsArray: uniqueHornsArray,
+      filteredBeastsByHorns: uniqueHornsArray,
       filteredBeastsArray:data})
   }
 
@@ -40,20 +46,32 @@ class App extends React.Component {
 
   //update array of horns to filter displayed horns
   handlerFilteredBeasts = (event) => {
-      this.setState({filteredBeastsByTitle:event.target.value})
+      let inputType = event.target.getAttribute('class-name');
+      if (inputType==='searchField'){
+        this.setState({filteredBeastsByTitle:event.target.value})
+      }
+      if (inputType==='dropDown') {
+        let filteredArray = event.target.value.split(',').map(item => parseInt(item));
+        this.setState({filteredBeastsByHorns:filteredArray})
+        // console.log(filteredArray)
+      }
+      
   }
 
   //update filtered beasts array when filtered beasts by horn changes
   componentDidUpdate(prevProps, prevState){
-    if (prevState.filteredBeastsByTitle !== this.state.filteredBeastsByTitle) {
-      let filteredBeastsArray =  this.state.beastsArray.filter(item => item.title.toLowerCase().includes(this.state.filteredBeastsByTitle.toLowerCase()) )
-      this.setState({filteredBeastsArray:filteredBeastsArray})
-    };
+   
+    if (prevState.filteredBeastsByHorns !== this.state.filteredBeastsByHorns || prevState.filteredBeastsByTitle !== this.state.filteredBeastsByTitle){
 
+      let filteredBeastsArray = this.state.beastsArray.filter(item => { return (this.state.filteredBeastsByHorns.includes(item.horns) && item.title.toLowerCase().includes(this.state.filteredBeastsByTitle.toLowerCase()))});
+
+      this.setState({filteredBeastsArray:filteredBeastsArray});
+    }
   }
 
   
   render() {
+
     return (
     <div className='appContainer'>
           <Header/>
@@ -62,6 +80,7 @@ class App extends React.Component {
             show={this.state.modalState}
             handlerModal={this.handlerModal}/>
           <Main 
+            uniqueHornsArray={this.state.uniqueHornsArray}
             handlerFilteredBeasts={this.handlerFilteredBeasts}
             data={this.state.filteredBeastsArray}
             handlerModal={this.handlerModal}/>

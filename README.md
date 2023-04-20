@@ -48,5 +48,11 @@ Feature#6: Fuzzy Search
   *Finish Time: 22:00
   *Actual Time: 07:00
 
+Feature#7: Horns Search
+  *Estimated Time: 03:00
+  *Start Time: 10:30
+  *Finish Time: 00:40
+  *Actual Time: 02:10
+
 
 
